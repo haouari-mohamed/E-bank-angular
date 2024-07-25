@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         console.log("/::::"+this.registerForm.value.username)
         console.log("/::::"+this.registerForm.value.email)
         console.log("/::::"+this.registerForm.value.password)
-        this.router.navigate(['/login']); // Redirect to login page
+        this.router.navigate(['/login']); 
       }, (error: any) => {
         console.error('Registration failed:', error);
       });

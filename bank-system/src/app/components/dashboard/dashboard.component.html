@@ -7,6 +7,15 @@
             {{ user.username }} ({{ user.email }})
           </li>
         </ul>
+
+        <ul class="list-group mt-3">
+          <li *ngFor="let compte of compteBancaire" class="list-group-item">
+            {id.compteBancaire}
+            
+          </li>
+        </ul>
+
+
         <button class="btn btn-danger mt-3" (click)="logout()">Logout</button>
       </div>
     </div>

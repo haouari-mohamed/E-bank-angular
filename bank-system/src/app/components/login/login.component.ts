@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     const user = this.loginForm.value;
     this.gl.login(user).subscribe((response: any) => {
       console.log('Login successful:', response);
-      localStorage.setItem('token', response.token); // Save the token
-      this.router.navigate(['/dashboard']); // Redirect to dashboard
+      localStorage.setItem('token', response); 
+      this.router.navigate(['/dashboard']); 
     }, (error: any) => {
       console.error('Login failed:', error);
     });

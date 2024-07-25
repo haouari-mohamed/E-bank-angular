@@ -8,6 +8,7 @@ import { GlobaleService } from '../../service/globale.service';
 })
 export class DashboardComponent implements OnInit {
   listUsers: any[] = [];
+  compteBancaire : CompteBancaire[]= [];
 
   constructor(private gl: GlobaleService) {}
 
@@ -17,10 +18,16 @@ export class DashboardComponent implements OnInit {
     }, (error: any) => {
       console.error('Failed to fetch users:', error);
     });
+
+    this.gl.getCompteBancaire().subscribe((data: compteBancaire[]) => {
+      this.compteBancaire = data;
+
   }
 
+
+
   logout(): void {
-    localStorage.removeItem('token'); // Remove the token
-    window.location.href = '/login'; // Redirect to login page
+    localStorage.removeItem('token'); 
+    window.location.href = '/login'; 
   }
 }

@@ -19,12 +19,16 @@ export class GlobaleService {
   getAllUtilisateurs(): Observable<Utilisateur[]> {
     return this.http.get<Utilisateur[]>(this.apiUrl, { headers: this.getAuthHeaders() });
   }
+  
+  getCompteBancaire() : Observable <CompteBancaire[]>{
+    return this.http.get<CompteBancaire[]>(this.apiUrl,{ headers: this.getAuthHeaders() } )
+  }
 
   createUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
     return this.http.post<Utilisateur>(`${this.apiUrl}/create`, utilisateur, { headers: this.getAuthHeaders() });
   }
 
   login(user: Utilisateur): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, user);
+    return this.http.post(`${this.apiUrl}/login`, user, { responseType: 'text' });
   }
 }

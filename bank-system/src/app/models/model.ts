@@ -1,4 +1,4 @@
-// utilisateur.model.ts
+// utilisateur
 export interface Utilisateur {
     id: number;
     username: string;
@@ -7,7 +7,7 @@ export interface Utilisateur {
     compteBancaires: CompteBancaire[];
   }
   
-  // transfert.model.ts
+  // transfert
   export interface Transfert {
     id: number;
     montant: number;
@@ -16,7 +16,7 @@ export interface Utilisateur {
     beneficiaire: Beneficiaire;
   }
   
-  // transaction.model.ts
+  // transaction
   export interface Transaction {
     id: number;
     dateHeure: Date;
@@ -26,7 +26,7 @@ export interface Utilisateur {
     compteBancaire: CompteBancaire;
   }
   
-  // compteBancaire.model.ts
+  // compteBancaire
   export interface CompteBancaire {
     id: number;
     type: string;
@@ -41,7 +41,7 @@ export interface Utilisateur {
     transferts: Transfert[];
   }
   
-  // carteBancaire.model.ts
+  // carteBancaire
   export interface CarteBancaire {
     id: number;
     numero: string;
@@ -51,7 +51,7 @@ export interface Utilisateur {
     compteBancaire: CompteBancaire;
   }
   
-  // beneficiaire.model.ts
+  // beneficiaire
   export interface Beneficiaire {
     id: number;
     nom: string;
